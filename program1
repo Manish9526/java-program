@@ -1,0 +1,58 @@
+import java.lang.*;
+import java.util.*;
+
+/////////////////////////////////////////////////
+//
+// Function Name: Multipliction_Factor
+// Discription:   Calulate the factor and Mutiplaction of all factor.
+// Input:		      integer
+// Output:		    integer
+// Author:		    Manish Ghalme
+// Date:		      16/4/2021.
+//
+/////////////////////////////////////////////////
+class Multipliction_Factor
+{
+	private int iValue;
+	
+	public Multipliction_Factor(int iNo)
+	{
+		this.iValue=iNo;
+	}
+	
+	public int FactMult()
+	{
+		int iCnt=0,iSum=1;
+		for(iCnt=1;iCnt<iValue;iCnt++)
+		{
+			if(iValue%iCnt==0)
+			{
+				iSum=iSum*iCnt;
+			}
+		}
+		return iSum;
+	}
+}
+///////////////////////////////////////////////////////
+// Write a program which accept number from user and 
+//          display its multiplication of factor.
+//////////////////////////////////////////////////////
+
+class program1
+{
+	public static void main(String arg[])
+	{
+		Scanner sobj=new Scanner(System.in);
+		System.out.println("Enter the number");
+		int iNo=sobj.nextInt();
+		
+		Multipliction_Factor mobj=new Multipliction_Factor(iNo);
+		int iRet=mobj.FactMult();
+		System.out.println("Multipliction of all factor is :"+iRet);	
+		
+	}
+}
+/////////////////////////////////////////
+// Input:  12.
+// output: 144.
+////////////////////////////////////////
